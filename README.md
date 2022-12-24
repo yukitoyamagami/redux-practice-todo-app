@@ -1,3 +1,7 @@
+# redux-practice-todo-app
+
+Redux 学習のために Todo アプリを作成
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
