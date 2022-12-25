@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-
-const AddTodoListButton = () => {
-  return (
-    <button>TODOに追加</button>
-  )
-};
+const AddTodoListButton = ({
+  onClick,
+}) =>(
+  <button onClick={onClick}>
+    TODO追加
+  </button>
+)
 
 export default AddTodoListButton;
