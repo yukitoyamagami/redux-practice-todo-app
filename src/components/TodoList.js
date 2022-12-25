@@ -5,8 +5,8 @@ const TodoList = () => {
 
   return (
     <ul>
-      {todo_lists.map((todo) => (
-        <li key={todo.id}>{todo.title}</li>
+      {todo_lists.map((todo, index) => (
+        <li key={index}>{todo.title} {todo.time_limit}</li>
       ))}
     </ul>
   );
