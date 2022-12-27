@@ -1,9 +1,11 @@
+import Button from '@mui/material/Button';
+
 const AddTodoListButton = ({
   onClick,
-}) =>(
-  <button onClick={onClick}>
+  }) => (
+  <Button variant="contained" onClick={onClick}>
     TODO追加
-  </button>
+  </Button>
 )
 
 export default AddTodoListButton;

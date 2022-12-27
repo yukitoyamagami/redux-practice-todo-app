@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import AddTodoListButton from './Buttons/AddTodoListButton'
 import { useDispatch } from 'react-redux';
+import TextField from '@mui/material/TextField';
 import { TodoListActionTypes } from '../store/index';
 
 const ListInput = () => {
@@ -30,10 +31,14 @@ const ListInput = () => {
   };
 
   return (
-    <div className="ListInput">
-      <input value={title} onChange={InputText} />
-      <input type="date" value={time_limit} onChange={InputTimeLimit} />
-      <AddTodoListButton onClick={AddTodoList} />
+    <div>
+      <div className="ListInput">
+        <TextField value={title} onChange={InputText} />
+        <TextField type="date" value={time_limit} onChange={InputTimeLimit} />
+      </div>
+      <div className="ListInput">
+        <AddTodoListButton onClick={AddTodoList} />
+      </div>
     </div>
   );
 };
