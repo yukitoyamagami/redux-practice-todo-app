@@ -18,7 +18,10 @@ const ListInput = () => {
   };
 
   const AddTodoList = () => {
-    if (!title || !time_limit) return;
+    if (!title || !time_limit) {
+      alert("TODOが入力されていません")
+      return;
+    }
     dispatch({
         type: TodoListActionTypes.ADD,
         payload: {
