@@ -17,6 +17,7 @@ const initialState = {
 
 export const TodoListActionTypes = {
   ADD: 'ADD',
+  DELETE: 'DELETE'
 }
 
 const reducer = (state = initialState, action) => {
@@ -24,6 +25,10 @@ const reducer = (state = initialState, action) => {
     case TodoListActionTypes.ADD:
       return {
          todo_lists: [...state.todo_lists, action.payload],
+      };
+    case TodoListActionTypes.DELETE:
+      return {
+         todo_lists: state.todo_lists.filter((list) => list.title !== action.payload.title),
       };
     default:
       return {
