@@ -28,7 +28,7 @@ const reducer = (state = initialState, action) => {
       };
     case TodoListActionTypes.DELETE:
       return {
-         todo_lists: state.todo_lists.filter((list) => list.title !== action.payload.title),
+         todo_lists: [...state.todo_lists.filter((list) => list.title !== action.payload)],
       };
     default:
       return {
