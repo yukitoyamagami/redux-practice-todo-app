@@ -3,21 +3,29 @@ import { legacy_createStore } from "redux";
 const initialState = {
   todo_lists: [
     {
+      id: "1",
       title: "初期設定1",
-      time_limit: 2022/1/1,
+      time_limit: "2022/1/1",
       status: "completed"
     },
     {
+      id: "2",
       title: "初期設定2",
-      time_limit: 2022/1/1,
+      time_limit: "2022/1/1",
       status: "completed"
-    }
+    },
+    {
+      id: "3",
+      title: "初期設定3",
+      time_limit: "2022/1/1",
+      status: "doing"
+    },
   ]
 }
 
 export const TodoListActionTypes = {
   ADD: 'ADD',
-  DELETE: 'DELETE'
+  DELETE: 'DELETE',
 }
 
 const reducer = (state = initialState, action) => {
