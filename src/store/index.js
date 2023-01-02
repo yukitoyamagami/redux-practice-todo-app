@@ -26,6 +26,7 @@ const initialState = {
 export const TodoListActionTypes = {
   ADD: 'ADD',
   DELETE: 'DELETE',
+  COMPLETE: 'COMPLETE',
 }
 
 const reducer = (state = initialState, action) => {
@@ -37,6 +38,16 @@ const reducer = (state = initialState, action) => {
     case TodoListActionTypes.DELETE:
       return {
          todo_lists: [...state.todo_lists.filter((list) => list.title !== action.payload)],
+      };
+    case TodoListActionTypes.COMPLETE:
+      return {
+        todo_lists: state.todo_lists.map((list) => {
+          if (list.title !== action.payload) return list
+          return {
+            ...list,
+            status: "completed"
+          };
+        }),
       };
     default:
       return {
