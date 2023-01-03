@@ -6,6 +6,7 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 const CompletedTodoList = ({
   todo_lists,
+  on_click_todo,
 }) => {
   const dispatch = useDispatch();
 
@@ -21,13 +22,13 @@ const CompletedTodoList = ({
       <Droppable droppableId="completed_todos">
       {(provided) => (
         <ul className="completed_todos" {...provided.droppableProps} ref={provided.innerRef}>
-            {todo_lists.map(({id, title}, index) => {
+            {todo_lists.map((todo, index) => {
               return (
-              <Draggable key={id} draggableId={id} index={index}>
+              <Draggable key={todo.id} draggableId={todo.id} index={index}>
                 {(provided) => (
-                  <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                    {title}
-                    <IconButton aria-label="delete" onClick={() => DeleteTodoFromList(title)} >
+                  <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}  onClick={() => on_click_todo(todo)}>
+                    {todo.title}
+                    <IconButton aria-label="delete" onClick={() => DeleteTodoFromList(todo.title)} >
                       <DeleteIcon />
                     </IconButton>
                   </div>

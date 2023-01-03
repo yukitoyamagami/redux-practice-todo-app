@@ -7,6 +7,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 const DoingTodoList = ({
   todo_lists,
+  on_click_todo,
 }) => {
   const dispatch = useDispatch();
 
@@ -28,7 +29,7 @@ const DoingTodoList = ({
   return(
     <ul>
       {todo_lists.map((todo, index) => (
-        <div key={index}>
+        <div key={index} onClick={() => on_click_todo(todo)}>
           {todo.title}
           <IconButton aria-label="delete" onClick={() => DeleteTodoFromList(todo.title)} >
             <DeleteIcon/>
