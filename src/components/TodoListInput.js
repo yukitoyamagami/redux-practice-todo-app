@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import AddTodoListButton from './Buttons/AddTodoListButton'
 import { useDispatch } from 'react-redux';
 import TextField from '@mui/material/TextField';
-import { TodoListActionTypes } from '../store/index';
+import { todoListActionTypes } from '../reducers/todo_list';
 
 const ListInput = () => {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const ListInput = () => {
       return;
     }
     dispatch({
-        type: TodoListActionTypes.ADD,
+        type: todoListActionTypes.ADD,
         payload: {
           title,
           time_limit,

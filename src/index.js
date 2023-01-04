@@ -7,11 +7,12 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import './index.css';
+import { createStore } from 'redux';
 import App from './App';
-
-import store from "./store/index";
+import roorReducers from './reducers'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const store = createStore(roorReducers)
 
 root.render(
   <Provider store={store}>

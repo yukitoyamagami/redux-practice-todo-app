@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { TodoListActionTypes } from '../store/index';
+import { todoListActionTypes } from '../reducers/todo_list';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
@@ -12,7 +12,7 @@ const CompletedTodoList = ({
 
   const DeleteTodoFromList = (title) => {
     dispatch({
-      type: TodoListActionTypes.DELETE,
+      type: todoListActionTypes.DELETE,
       payload: title
     });
   };

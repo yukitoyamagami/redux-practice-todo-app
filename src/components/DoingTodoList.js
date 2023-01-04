@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { TodoListActionTypes } from '../store/index';
+import { todoListActionTypes } from '../reducers/todo_list';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import IconButton from '@mui/material/IconButton';
@@ -13,14 +13,14 @@ const DoingTodoList = ({
 
   const DeleteTodoFromList = (title) => {
     dispatch({
-      type: TodoListActionTypes.DELETE,
+      type: todoListActionTypes.DELETE,
       payload: title
     });
   };
 
   const CompleteTodo = (title) => {
     dispatch({
-      type: TodoListActionTypes.COMPLETE,
+      type: todoListActionTypes.COMPLETE,
       payload: title
     });
   };

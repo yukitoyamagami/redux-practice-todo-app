@@ -1,6 +1,4 @@
-import { legacy_createStore } from "redux";
-
-const initialState = {
+export const initialState = {
   todo_lists: [
     {
       id: "1",
@@ -23,23 +21,23 @@ const initialState = {
   ]
 }
 
-export const TodoListActionTypes = {
+export const todoListActionTypes = {
   ADD: 'ADD',
   DELETE: 'DELETE',
   COMPLETE: 'COMPLETE',
 }
 
-const reducer = (state = initialState, action) => {
+export const todoListReducer = (state = initialState, action) => {
   switch (action.type) {
-    case TodoListActionTypes.ADD:
+    case todoListActionTypes.ADD:
       return {
          todo_lists: [...state.todo_lists, action.payload],
       };
-    case TodoListActionTypes.DELETE:
+    case todoListActionTypes.DELETE:
       return {
          todo_lists: [...state.todo_lists.filter((list) => list.title !== action.payload)],
       };
-    case TodoListActionTypes.COMPLETE:
+    case todoListActionTypes.COMPLETE:
       return {
         todo_lists: state.todo_lists.map((list) => {
           if (list.title !== action.payload) return list
@@ -55,7 +53,3 @@ const reducer = (state = initialState, action) => {
       };
   };
 }
-
-const store = legacy_createStore(reducer);
-
-export default store;

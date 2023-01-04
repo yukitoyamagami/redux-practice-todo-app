@@ -3,7 +3,7 @@ import DoingTodoList from './DoingTodoList.js';
 import CompletedTodoList from './CompletedTodoList.js';
 
 const TodoList = () => {
-  const todo_lists = useSelector((state) => state.todo_lists)
+  const todo_lists = useSelector((state) => state.todoListReducer.todo_lists)
 
   return (
     <div>
